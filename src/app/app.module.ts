@@ -4,11 +4,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
-import { CustomerNavBarComponent } from './customer-nav-bar/customer-nav-bar.component';
-import { EmployeeNavBarComponent } from './employee-nav-bar/employee-nav-bar.component';
 
+import { CustomerNavBarComponent } from './components/customer-nav-bar/customer-nav-bar.component';
+import { EmployeeNavBarComponent } from './components/employee-nav-bar/employee-nav-bar.component';
 import { LoginComponent } from './components/login/login.component';
+import { LoginUserService } from './services/login-user.service';
 import { RegisterComponent } from './components/register/register.component';
+
 
 @NgModule({
   declarations: [
@@ -17,7 +19,6 @@ import { RegisterComponent } from './components/register/register.component';
     CustomerNavBarComponent,
     EmployeeNavBarComponent,
     LoginComponent
-
   ],
   imports: [
     BrowserModule,
@@ -25,7 +26,9 @@ import { RegisterComponent } from './components/register/register.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    LoginUserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
