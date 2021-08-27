@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -20,8 +20,22 @@ export class RegisterComponent implements OnInit {
   }
 
   register() {
+
+    const alertText: string = this.validate();
+
+    if (alertText) return alert(alertText);
+
     this.userService.register(this.credentials.username, this.credentials.password).subscribe(response => {
-      console.log(response)
+      window.location.href = '/';
     })
+  }
+
+  validate(): string {
+
+    if (this.credentials.username.trim() === '' || this.credentials.password.trim() === '') return 'Please fill in all fields';
+
+    if (this.credentials.password !== this.credentials.passwordCheck) return 'Passwords do not match';
+
+    return '';
   }
 }
