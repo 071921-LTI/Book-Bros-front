@@ -38,9 +38,9 @@ export class LoginComponent implements OnInit {
               console.log(tArr[1]);
 
               if (tArr[1] === 'Employee') {
-                window.location.href = 'employee.html';
+                //window.location.href = 'employee.html';
               } else if (tArr[1] === 'Manager'){
-                window.location.href = 'manager.html';
+                //window.location.href = 'manager.html';
               }
             
           } else if (xhr.readyState === 4){
