@@ -8,10 +8,12 @@ import { CustomerNavBarComponent } from './customer-nav-bar/customer-nav-bar.com
 import { EmployeeNavBarComponent } from './employee-nav-bar/employee-nav-bar.component';
 
 import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    RegisterComponent,
     CustomerNavBarComponent,
     EmployeeNavBarComponent,
     LoginComponent
