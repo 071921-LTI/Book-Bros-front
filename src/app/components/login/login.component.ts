@@ -16,8 +16,8 @@ export class LoginComponent implements OnInit {
 
   login(username:string, password:string){
 
-    console.log(username);
-    console.log(password);
+    // console.log(username);
+    // console.log(password);
 
     let xhr = new XMLHttpRequest();
     
@@ -30,18 +30,16 @@ export class LoginComponent implements OnInit {
 
             if (authToken != null) {
               sessionStorage.setItem("token", authToken);
-              console.log(authToken);
+              // console.log(authToken);
               tArr = authToken.split(":");
             
-            
+              // console.log(tArr[1]);
 
-              console.log(tArr[1]);
-
-              if (tArr[1] === 'Employee') {
-                //window.location.href = 'employee.html';
-              } else if (tArr[1] === 'Manager'){
-                //window.location.href = 'manager.html';
-              }
+              // if (tArr[1] === 'Employee') {
+              //   window.location.href = 'employee.html';
+              // } else if (tArr[1] === 'Manager'){
+              //   window.location.href = 'manager.html';
+              // }
             
           } else if (xhr.readyState === 4){
             console.log('Something went wrong...');
