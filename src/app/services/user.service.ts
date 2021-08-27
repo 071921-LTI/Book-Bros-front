@@ -12,8 +12,6 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   register(username: string, password: string): Observable<string> {
-    return this.http.post(environment.apiUrl + 'users', { username, password, role: 'Customer' }).pipe(
-      map(response => response as string)
-    )
+    return this.http.post(environment.apiUrl + 'users', { username, password, role: 'Customer' }, { responseType: 'text' })
   }
 }
