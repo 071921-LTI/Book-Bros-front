@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
             let authToken = xhr.getResponseHeader("Authorization");
             let tArr;
 
-            if (authToken != null && tArr != null) {
+            if (authToken != null) {
               sessionStorage.setItem("token", authToken);
               console.log(authToken);
               tArr = authToken.split(":");
@@ -48,8 +48,13 @@ export class LoginComponent implements OnInit {
           }
       } 
     }
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    let requestBody = `username=${username}&password=${password}`;
-    xhr.send(requestBody);
+
+    let credentials = {
+      username: username,
+      password: password,
+  }
+
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.send(JSON.stringify(credentials));
   }
 }
