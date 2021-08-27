@@ -1,18 +1,27 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { LoginUserService } from '../../services/login-user.service';
+
+
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  providers: [
+    {provide: 'username', useValue: 'username'},
+    {provide: 'password', useValue: 'password'}
+  ]
 })
+
+
 export class LoginComponent implements OnInit {
-  authToken: string = '';
 
-  constructor() { }
+ngOnInit(): void {
+  
+}
 
-  ngOnInit(): void {
-  }
+//Finish service method here, figure how to activate function on button press and pass values from HTML to it
+// constructor(private loginC: LoginUserService) {loginC.loginUser(username, password)}
 
   login(username:string, password:string){
 
@@ -56,3 +65,4 @@ export class LoginComponent implements OnInit {
     xhr.send(JSON.stringify(credentials));
   }
 }
+
