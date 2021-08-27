@@ -78,7 +78,7 @@ html {
   
   /* FORM TYPOGRAPHY*/
   
-  input[type=button], input[type=submit], input[type=reset]  {
+  input[type=button], input[type=click], input[type=reset]  {
     background-color: #56baed;
     border: none;
     color: white;
@@ -100,11 +100,11 @@ html {
     transition: all 0.3s ease-in-out;
   }
   
-  input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover  {
+  input[type=button]:hover, input[type=click]:hover, input[type=reset]:hover  {
     background-color: #39ace7;
   }
   
-  input[type=button]:active, input[type=submit]:active, input[type=reset]:active  {
+  input[type=button]:active, input[type=click]:active, input[type=reset]:active  {
     -moz-transform: scale(0.95);
     -webkit-transform: scale(0.95);
     -o-transform: scale(0.95);
