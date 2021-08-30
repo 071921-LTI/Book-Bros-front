@@ -7,36 +7,36 @@ import { Inject, Injectable } from '@angular/core';
 export class LoginUserService {
 
   authToken: string = '';
-    loginUser(username:string, password:string) {
+  loginUser(username:string, password:string) {
 
-      // console.log(username);
-      // console.log(password);
+    // console.log(username);
+    // console.log(password);
 
-      let xhr = new XMLHttpRequest();
+    let xhr = new XMLHttpRequest();
     
-      xhr.open("POST", "http://localhost:8080/login");
+    xhr.open("POST", "http://localhost:8080/login");
 
-      xhr.onreadystatechange = function() {
-          if(xhr.readyState === 4 && xhr.status === 200){
-              let authToken = xhr.getResponseHeader("Authorization");
-              let tArr;
+    xhr.onreadystatechange = function() {
+      if(xhr.readyState === 4 && xhr.status === 200){
+        let authToken = xhr.getResponseHeader("Authorization");
+        let tArr;
 
-              if (authToken != null) {
-               sessionStorage.setItem("token", authToken);
-               // console.log(authToken);
-                tArr = authToken.split(":");
+        if (authToken != null) {
+          sessionStorage.setItem("token", authToken);
+          // console.log(authToken);
+          tArr = authToken.split(":");
             
-                // console.log(tArr[1]);
+            // console.log(tArr[1]);
 
-                // if (tArr[1] === 'Employee') {
-                //   window.location.href = 'employee.html';
-                // } else if (tArr[1] === 'Manager'){
-                //   window.location.href = 'manager.html';
-                // }
+            // if (tArr[1] === 'Employee') {
+            //   window.location.href = 'employee.html';
+            // } else if (tArr[1] === 'Manager'){
+            //   window.location.href = 'manager.html';
+            // }
             
-            } else if (xhr.readyState === 4){
+          } else if (xhr.readyState === 4){
             console.log('Something went wrong...');
-            }
+          }
         } 
       }
 
