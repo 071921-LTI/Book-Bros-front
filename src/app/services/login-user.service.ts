@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 
 export class LoginUserService {
 
-    authToken: string = '';
+  authToken: string = '';
     loginUser(username:string, password:string) {
 
       // console.log(username);
