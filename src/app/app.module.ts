@@ -10,7 +10,6 @@ import { EmployeeNavBarComponent } from './components/employee-nav-bar/employee-
 import { LoginComponent } from './components/login/login.component';
 import { LoginUserService } from './services/loginUser/login-user.service';
 import { RegisterComponent } from './components/register/register.component';
-import { LoginBaseComponent } from './components/loginBase/login-base/login-base.component';
 import { EmployeeBaseComponent } from './components/employeeBase/employee-base/employee-base.component';
 import { CustomerBaseComponent } from './components/customerBase/customer-base/customer-base.component';
 
@@ -22,7 +21,6 @@ import { CustomerBaseComponent } from './components/customerBase/customer-base/c
     CustomerNavBarComponent,
     EmployeeNavBarComponent,
     LoginComponent,
-    LoginBaseComponent,
     EmployeeBaseComponent,
     CustomerBaseComponent
   ],
