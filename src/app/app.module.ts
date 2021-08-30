@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { CustomerNavBarComponent } from './components/customer-nav-bar/customer-nav-bar.component';
 import { EmployeeNavBarComponent } from './components/employee-nav-bar/employee-nav-bar.component';
 import { LoginComponent } from './components/login/login.component';
-import { LoginUserService } from './services/login-user.service';
+import { LoginUserService } from './services/loginUser/login-user.service';
 import { RegisterComponent } from './components/register/register.component';
 
 
