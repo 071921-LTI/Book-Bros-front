@@ -25,10 +25,10 @@ navigateUser(router:Router): void {
     tArr = authToken.split(":");
             
     if (tArr[1] === 'Customer') {
-      router.navigate(['customer/placeholder']);
+      router.navigate(['customer/shop']);
               
     } else if (tArr[1] === 'Employee'){
-      router.navigate(['employee/placeholder']);
+      router.navigate(['employee/shop']);
     }
   }
 }
