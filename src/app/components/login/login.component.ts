@@ -34,7 +34,6 @@ navigateUser(router:Router): void {
 }
 
   login(username:string, password:string) {
-
     this.loginS.loginUser(username, password, () => this.navigateUser(this.router))
  }
 }
