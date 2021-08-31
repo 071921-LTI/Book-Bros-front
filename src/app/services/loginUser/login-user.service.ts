@@ -5,9 +5,8 @@ import { Inject, Injectable } from '@angular/core';
 })
 
 export class LoginUserService {
-
   authToken: string = '';
-  loginUser(username:string, password:string) {
+  loginUser(username:string, password:string, navigate:any) {
 
     // console.log(username);
     // console.log(password);
@@ -25,7 +24,7 @@ export class LoginUserService {
           sessionStorage.setItem("token", authToken);
           // console.log(authToken);
           tArr = authToken.split(":");
-            
+            navigate();
             // console.log(tArr[1]);
 
             // if (tArr[1] === 'Employee') {
