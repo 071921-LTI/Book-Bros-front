@@ -15,6 +15,8 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { EmployeeBaseComponent } from './components/componentBases/employee-base/employee-base.component';
 import { CustomerBaseComponent } from './components/componentBases/customer-base/customer-base.component';
+import { AddBookComponent } from './components/add-book/add-book.component';
+
 import { ShopComponent } from './components/shop/shop.component';
 import { CustomerPurchasesComponent } from './components/customerPurchases/customer-purchases.component';
 
@@ -27,6 +29,7 @@ import { CustomerPurchasesComponent } from './components/customerPurchases/custo
     LoginComponent,
     EmployeeBaseComponent,
     CustomerBaseComponent,
+    AddBookComponent,
     ShopComponent,
     CustomerPurchasesComponent
   ],
