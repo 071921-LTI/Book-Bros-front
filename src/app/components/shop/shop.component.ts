@@ -12,6 +12,7 @@ export class ShopComponent implements OnInit {
   constructor(private getBooks: ShopInfoService) {}
 
   ngOnInit(): void {
+    this.getShop();
   }
 
 //   getShop() {
@@ -19,21 +20,26 @@ export class ShopComponent implements OnInit {
 //  }
 
 books?: Book[];
+flag?: boolean[];
 
+changeBoolean(book:Book) {
+  if(book.flag){
+    book.flag = false;
+  }else {
+    book.flag = true;
+  }
+}
  
- @Output() onGetShop:EventEmitter<any> = new EventEmitter();
+//  @Output() onGetShop:EventEmitter<any> = new EventEmitter();
 
   getShop(): any {
     this.getBooks.getAllBooks().subscribe(
       response => {
+        response.forEach(item=>item.flag=false)
         this.books = response;
-        this.onGetShop.emit();
+        // this.onGetShop.emit();
         console.log(this.books);
       }
     )
-  }
-
-  showShop(): void {
-    console.log(this.getShop());
   }
 }
