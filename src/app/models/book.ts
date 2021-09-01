@@ -7,4 +7,5 @@ export interface Book {
     description: string;
     subjects: string;
     inventory: number;
+    flag: boolean;
 }
