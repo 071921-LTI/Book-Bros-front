@@ -14,7 +14,7 @@ export class ShopInfoService {
   constructor(private http: HttpClient) { }
 
   getAllBooks(): Observable<Books>{
-    return this.http.get(environment.apiUrl + '/books').pipe(
+    return this.http.get(environment.apiUrl + 'books').pipe(
       map(response => response as Books)
     )
   }
