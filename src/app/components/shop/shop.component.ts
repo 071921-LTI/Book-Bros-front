@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ShopInfoService } from '../../services/shopInfo/shop-info.service';
-import { Books } from '../../models/books';
+import { Book } from '../../models/book';
 
 @Component({
   selector: 'app-shop',
@@ -18,24 +18,22 @@ export class ShopComponent implements OnInit {
 //     console.log(this.getBooks.getAllBooks());
 //  }
 
-books?: Books;
-
+books?: Book[];
 
  
  @Output() onGetShop:EventEmitter<any> = new EventEmitter();
 
-  getShop(): any{
+  getShop(): any {
     this.getBooks.getAllBooks().subscribe(
       response => {
         this.books = response;
         this.onGetShop.emit();
-        // return this.books;
         console.log(this.books);
       }
     )
   }
 
-  // showShop(): void {
-  //   console.log(this.getShop());
-  // }
+  showShop(): void {
+    console.log(this.getShop());
+  }
 }
