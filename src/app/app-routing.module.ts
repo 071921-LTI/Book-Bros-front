@@ -5,6 +5,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { EmployeeBaseComponent } from './components/componentBases/employee-base/employee-base.component';
 import { CustomerBaseComponent } from './components/componentBases/customer-base/customer-base.component';
+import { AddBookComponent } from './components/add-book/add-book.component';
 
 
 const routes: Routes = [
@@ -37,8 +38,8 @@ const routes: Routes = [
       component: EmployeeBaseComponent,
       children: [
           {
-            path: 'placeholder',
-            component: EmployeeBaseComponent
+            path: 'add-book',
+            component: AddBookComponent
           }
         ]
       }

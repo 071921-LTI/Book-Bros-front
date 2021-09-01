@@ -12,6 +12,7 @@ import { LoginUserService } from './services/loginUser/login-user.service';
 import { RegisterComponent } from './components/register/register.component';
 import { EmployeeBaseComponent } from './components/componentBases/employee-base/employee-base.component';
 import { CustomerBaseComponent } from './components/componentBases/customer-base/customer-base.component';
+import { AddBookComponent } from './components/add-book/add-book.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { CustomerBaseComponent } from './components/componentBases/customer-base
     EmployeeNavBarComponent,
     LoginComponent,
     EmployeeBaseComponent,
-    CustomerBaseComponent
+    CustomerBaseComponent,
+    AddBookComponent
   ],
   imports: [
     BrowserModule,
