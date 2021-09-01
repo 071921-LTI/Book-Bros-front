@@ -15,6 +15,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { EmployeeBaseComponent } from './components/componentBases/employee-base/employee-base.component';
 import { CustomerBaseComponent } from './components/componentBases/customer-base/customer-base.component';
 import { ShopComponent } from './components/shop/shop.component';
+import { CustomerRequestComponent } from './components/customer-request/customer-request.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ShopComponent } from './components/shop/shop.component';
     LoginComponent,
     EmployeeBaseComponent,
     CustomerBaseComponent,
-    ShopComponent
+    ShopComponent,
+    CustomerRequestComponent
   ],
   imports: [
     BrowserModule,
