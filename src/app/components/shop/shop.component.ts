@@ -15,12 +15,7 @@ export class ShopComponent implements OnInit {
     this.getShop();
   }
 
-//   getShop() {
-//     console.log(this.getBooks.getAllBooks());
-//  }
-
 books?: Book[];
-flag?: boolean[];
 
 changeBoolean(book:Book) {
   if(book.flag){
@@ -32,7 +27,7 @@ changeBoolean(book:Book) {
  
 //  @Output() onGetShop:EventEmitter<any> = new EventEmitter();
 
-  getShop(): any {
+  getShop() {
     this.getBooks.getAllBooks().subscribe(
       response => {
         response.forEach(item=>item.flag=false)
