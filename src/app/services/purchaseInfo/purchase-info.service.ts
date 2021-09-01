@@ -3,18 +3,18 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
-import { Book } from '../../models/book';
+import { Purchase } from '../../models/purchase';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ShopInfoService {
+export class PurchaseInfoService {
 
   constructor(private http: HttpClient) { }
 
-  getAllBooks(): Observable<Book[]>{
-    return this.http.get(environment.apiUrl + 'books').pipe(
-      map(response => response as Book[])
+  getPurchaseList(id:string): Observable<Purchase[]>{
+    return this.http.get(environment.apiUrl + 'purchases/' + id).pipe(
+      map(response => response as Purchase[])
     )
   }
 }
