@@ -1,0 +1,15 @@
+<table>
+    <div *ngFor='let purchase of purchases'>
+        {{purchase.book.title}}
+        {{purchase.book.author}}
+        {{purchase.book.price}}
+        {{purchase.book.price}}
+        {{purchase.book.published}}
+        {{purchase.book.inventory}}
+        {{purchase.date_purchased}}
+
+        <button (click)='changeBoolean(purchase)'>More Info</button>
+        <p *ngIf='purchase.book.flag'>{{purchase.book.description}}</p>
+        <p *ngIf='purchase.book.flag'>Subjects: {{purchase.book.subjects}}</p>
+    </div>
+</table>

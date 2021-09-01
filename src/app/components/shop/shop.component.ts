@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ShopInfoService } from '../../services/shopInfo/shop-info.service';
-import { Books } from '../../models/books';
+import { Book } from '../../models/book';
 
 @Component({
   selector: 'app-shop',
@@ -12,30 +12,29 @@ export class ShopComponent implements OnInit {
   constructor(private getBooks: ShopInfoService) {}
 
   ngOnInit(): void {
+    this.getShop();
   }
 
-//   getShop() {
-//     console.log(this.getBooks.getAllBooks());
-//  }
+books?: Book[];
 
-books?: Books;
-
-
+changeBoolean(book:Book) {
+  if(book.flag){
+    book.flag = false;
+  }else {
+    book.flag = true;
+  }
+}
  
- @Output() onGetShop:EventEmitter<any> = new EventEmitter();
+//  @Output() onGetShop:EventEmitter<any> = new EventEmitter();
 
-  getShop(): any{
+  getShop() {
     this.getBooks.getAllBooks().subscribe(
       response => {
+        response.forEach(item=>item.flag=false)
         this.books = response;
-        this.onGetShop.emit();
-        // return this.books;
+        // this.onGetShop.emit();
         console.log(this.books);
       }
     )
   }
-
-  // showShop(): void {
-  //   console.log(this.getShop());
-  // }
 }
