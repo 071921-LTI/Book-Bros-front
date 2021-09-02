@@ -18,6 +18,7 @@ export class ShopComponent implements OnInit {
   }
 
 books?: Book[];
+userRole: string = `${sessionStorage.getItem('token')}`.split(':')[1];
 
 changeBoolean(book:Book) {
   if(book.flag){
