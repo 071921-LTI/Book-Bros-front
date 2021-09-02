@@ -8,6 +8,8 @@ import { ShopComponent } from './components/shop/shop.component';
 import { EmployeeBaseComponent } from './components/componentBases/employee-base/employee-base.component';
 import { CustomerBaseComponent } from './components/componentBases/customer-base/customer-base.component';
 import { CustomerRequestComponent } from './components/customer-request/customer-request.component';
+import { AddBookComponent } from './components/add-book/add-book.component';
+import { CustomerPurchasesComponent } from './components/customerPurchases/customer-purchases.component';
 
 const routes: Routes = [
   {
@@ -31,6 +33,10 @@ const routes: Routes = [
         {
           path: 'shop',
           component: ShopComponent
+        },
+        {
+          path: 'purchases',
+          component: CustomerPurchasesComponent
         }
       ]
     },
@@ -38,6 +44,10 @@ const routes: Routes = [
       path:'employee',
       component: EmployeeBaseComponent,
       children: [
+          {
+            path: 'add-book',
+            component: AddBookComponent
+          },
           {
             path: 'shop',
             component: ShopComponent

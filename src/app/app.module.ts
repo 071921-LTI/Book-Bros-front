@@ -7,15 +7,19 @@ import { AppComponent } from './app.component';
 
 import { LoginUserService } from './services/loginUser/login-user.service';
 import { ShopInfoService } from './services/shopInfo/shop-info.service';
+import { PurchaseInfoService } from './services/purchaseInfo/purchase-info.service';
 
-import { CustomerNavBarComponent } from './components/customer-nav-bar/customer-nav-bar.component';
-import { EmployeeNavBarComponent } from './components/employee-nav-bar/employee-nav-bar.component';
+import { CustomerNavBarComponent } from './components/nav-bars/customer-nav-bar/customer-nav-bar.component';
+import { EmployeeNavBarComponent } from './components/nav-bars/employee-nav-bar/employee-nav-bar.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { EmployeeBaseComponent } from './components/componentBases/employee-base/employee-base.component';
 import { CustomerBaseComponent } from './components/componentBases/customer-base/customer-base.component';
+import { AddBookComponent } from './components/add-book/add-book.component';
+
 import { ShopComponent } from './components/shop/shop.component';
 import { CustomerRequestComponent } from './components/customer-request/customer-request.component';
+import { CustomerPurchasesComponent } from './components/customerPurchases/customer-purchases.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,9 @@ import { CustomerRequestComponent } from './components/customer-request/customer
     EmployeeBaseComponent,
     CustomerBaseComponent,
     ShopComponent,
-    CustomerRequestComponent
+    CustomerRequestComponent,
+    AddBookComponent,
+    CustomerPurchasesComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +43,8 @@ import { CustomerRequestComponent } from './components/customer-request/customer
   ],
   providers: [
     LoginUserService,
-    ShopInfoService
+    ShopInfoService,
+    PurchaseInfoService
   ],
   bootstrap: [AppComponent]
 })
