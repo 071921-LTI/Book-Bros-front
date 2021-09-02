@@ -7,6 +7,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { ShopComponent } from './components/shop/shop.component';
 import { EmployeeBaseComponent } from './components/componentBases/employee-base/employee-base.component';
 import { CustomerBaseComponent } from './components/componentBases/customer-base/customer-base.component';
+import { CustomerRequestComponent } from './components/customer-request/customer-request.component';
 import { AddBookComponent } from './components/add-book/add-book.component';
 import { CustomerPurchasesComponent } from './components/customerPurchases/customer-purchases.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
@@ -62,7 +63,17 @@ const routes: Routes = [
             component: EmployeePurchasesComponent
           }
         ]
-      }
+      },
+      {
+        path:'customer',
+        component: CustomerBaseComponent,
+        children: [
+            {
+              path: 'request',
+              component: CustomerRequestComponent
+            }
+          ]
+        }
 ];
 
 @NgModule({

@@ -1,0 +1,15 @@
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Request Titles -->
+      <h2>Request a Book</h2>
+        
+        <form >
+            <!-- Book Request Form -->
+            <input type="text" id="title" class="fadeIn second" name="request" placeholder="title" [(ngModel)]="request.title"> <br>
+            <input type="text" id="author" class="fadeIn second" name="request" placeholder="author" [(ngModel)]="request.author">
+        </form>
+        <button (click)="requestBook()" class="fadeIn fourth" class="btn btn-primary">Request Book</button> <p></p>
+    </div>
+</div>
+
+
