@@ -11,6 +11,7 @@ import { CustomerRequestComponent } from './components/customer-request/customer
 import { AddBookComponent } from './components/add-book/add-book.component';
 import { CustomerPurchasesComponent } from './components/customerPurchases/customer-purchases.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
+import { EmployeePurchasesComponent } from './components/employee-purchases/employee-purchases.component';
 
 const routes: Routes = [
   {
@@ -56,6 +57,10 @@ const routes: Routes = [
           {
             path: 'shop',
             component: ShopComponent
+          },
+          {
+            path: 'purchases',
+            component: EmployeePurchasesComponent
           }
         ]
       },

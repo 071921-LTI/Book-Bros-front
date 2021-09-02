@@ -17,4 +17,10 @@ export class PurchaseInfoService {
       map(response => response as Purchase[])
     )
   }
+
+  getAllPurchasesList(): Observable<Purchase[]> {
+    return this.http.get(environment.apiUrl + 'purchases').pipe(
+      map(response => response as Purchase[])
+    )
+  }
 }
