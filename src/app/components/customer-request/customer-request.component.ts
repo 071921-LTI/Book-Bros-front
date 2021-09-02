@@ -14,12 +14,22 @@ export class CustomerRequestComponent implements OnInit {
   }
 
   request = {
+    id: '',
     title: '',
     author: ''
   }
 
   requestBook() {
-    
-    this.requestService.request(this.request.title, this.request.author).subscribe()
+    console.log("in requestBook() method")
+    console.log(this.getTokenId() + ' ' +  this.request.title + ' ' +  this.request.author);
+    this.requestService.request(this.getTokenId(), this.request.title, this.request.author).subscribe()
   }
+
+  id?: any;
+  getTokenId() {
+    this.id = sessionStorage.getItem("token");
+    let splitted = this.id.split(':', 1);
+    console.log(splitted[0])
+    return splitted[0];
+}
 }
