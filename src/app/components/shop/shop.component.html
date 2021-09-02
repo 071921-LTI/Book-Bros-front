@@ -9,6 +9,7 @@
 
         <button (click)='changeBoolean(book)'>More Info</button>
         <button (click)='buyBook(book)'>Purchase</button>
+        <button *ngIf='userRole === "Customer"' (click)='addToWishlist(book)'>Add to Wishlist</button>
         <p *ngIf='book.flag'>{{book.description}}</p>
         <p *ngIf='book.flag'>Subjects: {{book.subjects}}</p>
     </div>

@@ -20,6 +20,9 @@ import { AddBookComponent } from './components/add-book/add-book.component';
 
 import { ShopComponent } from './components/shop/shop.component';
 import { CustomerPurchasesComponent } from './components/customerPurchases/customer-purchases.component';
+import { WishlistComponent } from './components/wishlist/wishlist.component';
+import { DatePipePipe } from './pipes/datePipe/date-pipe.pipe';
+import { EmployeePurchasesComponent } from './components/employee-purchases/employee-purchases.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,10 @@ import { CustomerPurchasesComponent } from './components/customerPurchases/custo
     CustomerBaseComponent,
     AddBookComponent,
     ShopComponent,
-    CustomerPurchasesComponent
+    CustomerPurchasesComponent,
+    WishlistComponent,
+    DatePipePipe,
+    EmployeePurchasesComponent
   ],
   imports: [
     BrowserModule,
