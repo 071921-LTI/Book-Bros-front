@@ -21,7 +21,7 @@ export class CustomerRequestComponent implements OnInit {
   requestBook() {
     console.log("in requestBook() method")
     console.log(this.getTokenId() + ' ' +  this.request.title + ' ' +  this.request.author);
-    this.requestService.request(this.getTokenId(), this.request.title, this.request.author).subscribe()
+    this.requestService.request(this.request.title, this.request.author).subscribe()
   }
 
   id?: any;

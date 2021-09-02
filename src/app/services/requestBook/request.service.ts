@@ -11,7 +11,7 @@ export class RequestService {
 
   constructor(private http: HttpClient) { }
 
-  request(id: string, title: string, author: string): Observable<string> {
+  request(title: string, author: string): Observable<string> {
     return this.http.post(environment.apiUrl + 'request', {title, author}, { responseType: 'text' })
   }
 }
