@@ -14,6 +14,7 @@ export class CustomerRequestComponent implements OnInit {
   }
 
   request = {
+    custId: this.getTokenId(),
     title: '',
     author: ''
   }
@@ -21,7 +22,7 @@ export class CustomerRequestComponent implements OnInit {
   requestBook() {
     console.log("in requestBook() method")
     console.log(this.getTokenId() + ' ' +  this.request.title + ' ' +  this.request.author);
-    this.requestService.request(this.request.title, this.request.author).subscribe()
+    this.requestService.request(this.request.custId, this.request.title, this.request.author).subscribe()
   }
 
   id?: any;
@@ -30,5 +31,5 @@ export class CustomerRequestComponent implements OnInit {
     let splitted = this.id.split(':', 1);
     console.log(splitted[0])
     return splitted[0];
-}
+  }
 }
