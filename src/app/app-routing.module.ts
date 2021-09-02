@@ -9,6 +9,7 @@ import { EmployeeBaseComponent } from './components/componentBases/employee-base
 import { CustomerBaseComponent } from './components/componentBases/customer-base/customer-base.component';
 import { AddBookComponent } from './components/add-book/add-book.component';
 import { CustomerPurchasesComponent } from './components/customerPurchases/customer-purchases.component';
+import { WishlistComponent } from './components/wishlist/wishlist.component';
 
 const routes: Routes = [
   {
@@ -36,6 +37,10 @@ const routes: Routes = [
         {
           path: 'purchases',
           component: CustomerPurchasesComponent
+        },
+        {
+          path: 'wishlist',
+          component: WishlistComponent
         }
       ]
     },
