@@ -1,55 +1,40 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { LoginUserService } from '../../services/loginUser/login-user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+
+
 export class LoginComponent implements OnInit {
-  authToken: string = '';
 
-  constructor() { }
+ngOnInit(): void {
+  
+}
 
-  ngOnInit(): void {
-  }
+constructor(private loginS: LoginUserService, private router: Router) {}
 
-  login(username:string, password:string){
+navigateUser(router:Router): void {
 
-    console.log(username);
-    console.log(password);
-
-    let xhr = new XMLHttpRequest();
-    
-    xhr.open("POST", "http://localhost:8080/login");
-
-    xhr.onreadystatechange = function() {
-        if(xhr.readyState === 4 && xhr.status === 200){
-            let authToken = xhr.getResponseHeader("Authorization");
-            let tArr;
-
-            if (authToken != null && tArr != null) {
-              sessionStorage.setItem("token", authToken);
-              console.log(authToken);
-              tArr = authToken.split(":");
+  let authToken = sessionStorage.getItem('token')
+  if (authToken != null) {
+    let tArr;
+    tArr = authToken.split(":");
             
-            
-
-              console.log(tArr[1]);
-
-              if (tArr[1] === 'Employee') {
-                window.location.href = 'employee.html';
-              } else if (tArr[1] === 'Manager'){
-                window.location.href = 'manager.html';
-              }
-            
-          } else if (xhr.readyState === 4){
-            console.log('Something went wrong...');
-          }
-      } 
+    if (tArr[1] === 'Customer') {
+      router.navigate(['customer/shop']);
+              
+    } else if (tArr[1] === 'Employee'){
+      router.navigate(['employee/shop']);
     }
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    let requestBody = `username=${username}&password=${password}`;
-    xhr.send(requestBody);
   }
 }
+
+  login(username:string, password:string) {
+    this.loginS.loginUser(username, password, () => this.navigateUser(this.router))
+ }
+}
+
