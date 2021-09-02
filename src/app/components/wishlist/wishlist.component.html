@@ -1,0 +1,16 @@
+<table>
+    <div *ngFor='let wish of wishes'>
+        {{wish.book.title}}
+        {{wish.book.author}}
+        {{wish.book.price}}
+        {{wish.book.price}}
+        {{wish.book.published}}
+        {{wish.book.inventory}}
+        Since: {{wish.dateAdded | datePipe}}
+        <button (click)='changeBoolean(wish.book)'>More Info</button>
+        <div>
+            <p *ngIf='wish.book.flag'>{{wish.book.description}}</p>
+            <p *ngIf='wish.book.flag'>Subjects: {{wish.book.subjects}}</p>
+        </div>
+    </div>
+</table>

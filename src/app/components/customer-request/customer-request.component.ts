@@ -14,7 +14,6 @@ export class CustomerRequestComponent implements OnInit {
   }
 
   request = {
-    id: '',
     title: '',
     author: ''
   }
