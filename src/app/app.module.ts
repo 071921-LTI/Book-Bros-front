@@ -21,6 +21,7 @@ import { ShopComponent } from './components/shop/shop.component';
 import { CustomerPurchasesComponent } from './components/customerPurchases/customer-purchases.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { DatePipePipe } from './pipes/datePipe/date-pipe.pipe';
+import { EmployeePurchasesComponent } from './components/employee-purchases/employee-purchases.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { DatePipePipe } from './pipes/datePipe/date-pipe.pipe';
     ShopComponent,
     CustomerPurchasesComponent,
     WishlistComponent,
-    DatePipePipe
+    DatePipePipe,
+    EmployeePurchasesComponent
   ],
   imports: [
     BrowserModule,
