@@ -1,6 +1,8 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ShopInfoService } from '../../services/shopInfo/shop-info.service';
 import { Book } from '../../models/book';
+import { NewWishlist } from 'src/app/models/newWishlist';
+import { AddToWishlistService } from 'src/app/services/addToWishlist/add-to-wishlist.service';
 
 @Component({
   selector: 'app-shop',
@@ -9,7 +11,7 @@ import { Book } from '../../models/book';
 })
 export class ShopComponent implements OnInit {
 
-  constructor(private getBooks: ShopInfoService) {}
+  constructor(private getBooks: ShopInfoService, private addToWishlistService: AddToWishlistService) {}
 
   ngOnInit(): void {
     this.getShop();
@@ -36,5 +38,17 @@ changeBoolean(book:Book) {
         console.log(this.books);
       }
     )
+  }
+
+  addToWishlist(book: Book) {
+    const wish = {
+      book: book,
+      dateAdded: new Date()
+    }
+
+    this.addToWishlistService.addToWishlist(wish).subscribe(
+      response => console.log(response)
+    )
+
   }
 }
