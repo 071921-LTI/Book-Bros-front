@@ -13,7 +13,7 @@ export class ShopInfoService {
   constructor(private http: HttpClient) { }
 
   getAllBooks(): Observable<Book[]>{
-    return this.http.get(environment.apiUrl + 'books').pipe(
+    return this.http.get(environment.apiUrl + 'books', { headers: { "Authorization": `${sessionStorage.getItem('token')}` }}).pipe(
       map(response => response as Book[])
     )
   }
