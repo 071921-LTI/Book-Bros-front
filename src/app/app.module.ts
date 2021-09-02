@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { LoginUserService } from './services/loginUser/login-user.service';
 import { ShopInfoService } from './services/shopInfo/shop-info.service';
 import { PurchaseInfoService } from './services/purchaseInfo/purchase-info.service';
+import { PurchaseBookService } from './services/purchaseBook/purchase-book.service';
 
 import { CustomerNavBarComponent } from './components/nav-bars/customer-nav-bar/customer-nav-bar.component';
 import { EmployeeNavBarComponent } from './components/nav-bars/employee-nav-bar/employee-nav-bar.component';
@@ -50,7 +51,8 @@ import { EmployeePurchasesComponent } from './components/employee-purchases/empl
   providers: [
     LoginUserService,
     ShopInfoService,
-    PurchaseInfoService
+    PurchaseInfoService,
+    PurchaseBookService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ShopInfoService } from '../../services/shopInfo/shop-info.service';
+import { PurchaseBookService } from '../../services/purchaseBook/purchase-book.service';
 import { Book } from '../../models/book';
 import { NewWishlist } from 'src/app/models/newWishlist';
 import { AddToWishlistService } from 'src/app/services/addToWishlist/add-to-wishlist.service';
@@ -11,13 +12,14 @@ import { AddToWishlistService } from 'src/app/services/addToWishlist/add-to-wish
 })
 export class ShopComponent implements OnInit {
 
-  constructor(private getBooks: ShopInfoService, private addToWishlistService: AddToWishlistService) {}
+constructor(private getBooks: ShopInfoService, private addToWishlistService: AddToWishlistService, private addPurchase: PurchaseBookService) {}
 
   ngOnInit(): void {
     this.getShop();
   }
 
 books?: Book[];
+purchase?: Book
 userRole: string = `${sessionStorage.getItem('token')}`.split(':')[1];
 
 changeBoolean(book:Book) {
@@ -41,6 +43,12 @@ changeBoolean(book:Book) {
     )
   }
 
+  buyBook(purchase: Book) {
+    console.log(purchase)
+    this.addPurchase.addPurchase(purchase).subscribe();
+    this.getShop();
+    }
+
   addToWishlist(book: Book) {
     const wish = {
       book: book,
@@ -53,3 +61,5 @@ changeBoolean(book:Book) {
 
   }
 }
+
+
