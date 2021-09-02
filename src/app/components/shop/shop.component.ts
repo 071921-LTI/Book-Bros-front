@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ShopInfoService } from '../../services/shopInfo/shop-info.service';
+import { PurchaseBookService } from '../../services/purchaseBook/purchase-book.service';
 import { Book } from '../../models/book';
 
 @Component({
@@ -9,13 +10,14 @@ import { Book } from '../../models/book';
 })
 export class ShopComponent implements OnInit {
 
-  constructor(private getBooks: ShopInfoService) {}
+  constructor(private getBooks: ShopInfoService, private addPurchase: PurchaseBookService) {}
 
   ngOnInit(): void {
     this.getShop();
   }
 
 books?: Book[];
+purchase?: Book
 
 changeBoolean(book:Book) {
   if(book.flag){
@@ -37,4 +39,12 @@ changeBoolean(book:Book) {
       }
     )
   }
+
+  buyBook(purchase: Book) {
+    console.log(purchase)
+    this.addPurchase.addPurchase(purchase).subscribe();
+    this.getShop();
+    }
 }
+
+
