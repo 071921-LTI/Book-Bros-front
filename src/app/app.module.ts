@@ -24,6 +24,7 @@ import { CustomerPurchasesComponent } from './components/customerPurchases/custo
 import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { DatePipePipe } from './pipes/datePipe/date-pipe.pipe';
 import { EmployeePurchasesComponent } from './components/employee-purchases/employee-purchases.component';
+import { DatePipeTPipe } from './pipes/datePipeT/date-pipe-t.pipe';
 import { EmployeeViewRequestsComponent } from './components/employee-view-requests/employee-view-requests.component';
 
 @NgModule({
@@ -42,6 +43,7 @@ import { EmployeeViewRequestsComponent } from './components/employee-view-reques
     WishlistComponent,
     DatePipePipe,
     EmployeePurchasesComponent,
+    DatePipeTPipe,
     EmployeeViewRequestsComponent
   ],
   imports: [

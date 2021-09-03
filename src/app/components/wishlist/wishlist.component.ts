@@ -31,7 +31,7 @@ changeBoolean(book:Book) {
   getWishlist() {
     this.getWishlistService.getWishlist().subscribe(
       response => {
-        response.forEach(item => item.book.flag = false);
+        response.forEach(item=>item.book.dataTarget = "#" + item.book.id);
         this.wishes = response;
       }
     )
