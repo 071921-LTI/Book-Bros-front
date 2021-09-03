@@ -25,6 +25,7 @@ import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { DatePipePipe } from './pipes/datePipe/date-pipe.pipe';
 import { EmployeePurchasesComponent } from './components/employee-purchases/employee-purchases.component';
 import { DatePipeTPipe } from './pipes/datePipeT/date-pipe-t.pipe';
+import { EmployeeViewRequestsComponent } from './components/employee-view-requests/employee-view-requests.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { DatePipeTPipe } from './pipes/datePipeT/date-pipe-t.pipe';
     WishlistComponent,
     DatePipePipe,
     EmployeePurchasesComponent,
-    DatePipeTPipe
+    DatePipeTPipe,
+    EmployeeViewRequestsComponent
   ],
   imports: [
     BrowserModule,
