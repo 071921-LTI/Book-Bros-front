@@ -8,4 +8,5 @@ export interface Book {
     subjects: string;
     inventory: number;
     flag: boolean;
+    dataTarget: string;
 }

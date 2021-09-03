@@ -1,14 +1,63 @@
-<table>
-    <div *ngFor='let book of books'>
-        {{book.title}}
-        {{book.author}}
-        {{book.price}}
-        {{book.price}}
-        {{book.published}}
-        {{book.inventory}}
+<div class='container'>
+    <p></p>
+    <button (click)="getShop()" class="btn btn-primary">Show All</button> <p></p>
+        <input type="text" id="author" name="author" placeholder="Author" #author> <p></p>
+    <button (click)="searchAuthor(author.value)" class="btn btn-primary">Search By Author</button> <p></p>
+        <input type="text" id="title" name="title" placeholder="Title" #title> <p></p>
+    <button (click)="searchTitle(title.value)" class="btn btn-primary">Search By Title</button> <p></p>
+</div>
 
-        <button (click)='changeBoolean(book)'>More Info</button>
-        <p *ngIf='book.flag'>{{book.description}}</p>
-        <p *ngIf='book.flag'>Subjects: {{book.subjects}}</p>
-    </div>
+<table id='box'>
+    <thead>
+        <tr>
+            <th scope="col"> Title </th>
+            <th scope="col"> Author </th>
+            <th scope="col"> Price </th>
+            <th scope="col"> Published </th>
+            <th scope="col"> Inventory </th>
+        </tr>
+      </thead>
+    <tbody *ngFor="let book of books" id= "box" >
+        <tr>
+            <td>
+                {{book.title}} 
+            </td>
+            <td>
+                {{book.author}}
+            </td>
+            <td>
+                {{book.price}}
+            </td>
+            <td>
+                {{book.published}}
+            </td>
+            <td>
+                {{book.inventory}}
+            </td>
+
+        <button type="button" data-toggle="modal" [attr.data-target]='book.dataTarget'>More Info</button>
+        <button *ngIf='userRole === "Customer"' (click)='buyBook(book)'>Purchase</button>
+        <button *ngIf='userRole === "Customer"' (click)='addToWishlist(book)'>Add to Wishlist</button>
+    </tr>
+
+    <div class="modal" [id]='book.id' tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Book Information</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p><b>Description: </b>{{book.description}}</p>
+              <b>Subjects: </b>{{book.subjects}}
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </tbody >
 </table>

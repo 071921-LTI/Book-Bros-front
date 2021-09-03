@@ -8,27 +8,28 @@
             <th scope="col"> Date Purchased </th>
         </tr>
       </thead>
-    <tbody *ngFor="let purchase of purchases" id= "box" >
+    <tbody *ngFor="let wish of wishes" id= "box" >
         <tr>
             <td>
-                {{purchase.book.title}} 
+                {{wish.book.title}} 
             </td>
             <td>
-                {{purchase.book.author}}
+                {{wish.book.author}}
             </td>
             <td>
-                {{purchase.book.price}}
+                {{wish.book.price}}
             </td>
             <td>
-                {{purchase.book.published}}
+                {{wish.book.published}}
             </td>
             <td>
-                {{purchase.datePurchased | datePipeT}}
+                {{wish.dateAdded | datePipe}}
             </td>
 
-        <button type="button" data-toggle="modal" [attr.data-target]='purchase.book.dataTarget'>More Info</button>
+        <button type="button" data-toggle="modal" [attr.data-target]='wish.book.dataTarget'>More Info</button>
     </tr>
-    <div class="modal" [id]='purchase.book.id' tabindex="-1" role="dialog">
+
+    <div class="modal" [id]='wish.book.id' tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -38,8 +39,8 @@
               </button>
             </div>
             <div class="modal-body">
-              <p><b>Description: </b>{{purchase.book.description}}</p>
-              <b>Subjects: </b>{{purchase.book.subjects}}
+              <p><b>Description: </b>{{wish.book.description}}</p>
+              <b>Subjects: </b>{{wish.book.subjects}}
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

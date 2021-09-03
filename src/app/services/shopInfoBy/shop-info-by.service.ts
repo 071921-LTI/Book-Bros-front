@@ -8,12 +8,12 @@ import { Book } from '../../models/book';
 @Injectable({
   providedIn: 'root'
 })
-export class ShopInfoService {
+export class ShopInfoByService {
 
   constructor(private http: HttpClient) { }
 
-  getAllBooks(): Observable<Book[]>{
-    return this.http.get(environment.apiUrl + 'books', { headers: { "Authorization": `${sessionStorage.getItem('token')}` }}).pipe(
+  getBooksByAuthorOrTitle(authorOrTitle:string): Observable<Book[]>{
+    return this.http.get(environment.apiUrl + 'books/' + authorOrTitle, { headers: { "Authorization": `${sessionStorage.getItem('token')}` }}).pipe(
       map(response => response as Book[])
     )
   }

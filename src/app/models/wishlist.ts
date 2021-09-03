@@ -1,9 +1,9 @@
 import { Book } from "./book";
 import { User } from "./user";
 
-export interface Purchase {
+export interface Wishlist {
     id: number;
-    purchaser:User;
+    wisher: User;
     book: Book;
-    datePurchased: Date;
+    dateAdded: Date;
 }

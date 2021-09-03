@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { PurchaseInfoService } from '../../services/purchaseInfo/purchase-info.service';
-import { Purchase } from '../../models/purchase';
-
+import { Purchase } from 'src/app/models/purchase';
+import { PurchaseInfoService } from 'src/app/services/purchaseInfo/purchase-info.service';
 
 @Component({
-  selector: 'app-customer-purchases',
-  templateUrl: './customer-purchases.component.html',
-  styleUrls: ['./customer-purchases.component.css']
+  selector: 'app-employee-purchases',
+  templateUrl: './employee-purchases.component.html',
+  styleUrls: ['./employee-purchases.component.css']
 })
-export class CustomerPurchasesComponent implements OnInit {
+export class EmployeePurchasesComponent implements OnInit {
 
   constructor(private getPurchases: PurchaseInfoService) {}
 
@@ -30,19 +29,16 @@ export class CustomerPurchasesComponent implements OnInit {
   getTokenId() {
       this.id = sessionStorage.getItem("token");
       var splitted = this.id.split(':', 1);
-      console.log(splitted[0])
       return splitted[0];
   }
 
   getPurchase() {
-    this.getPurchases.getPurchaseList(this.getTokenId()).subscribe(
+    this.getPurchases.getAllPurchasesList().subscribe(
       response => {
         response.forEach(item=>item.book.dataTarget = "#" + item.book.id)
         this.purchases = response;
-        // this.onGetShop.emit();
-        console.log(this.purchases);
+        console.log(response)
       }
     )
   }
-
 }

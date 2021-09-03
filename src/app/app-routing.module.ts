@@ -10,6 +10,9 @@ import { CustomerBaseComponent } from './components/componentBases/customer-base
 import { CustomerRequestComponent } from './components/customer-request/customer-request.component';
 import { AddBookComponent } from './components/add-book/add-book.component';
 import { CustomerPurchasesComponent } from './components/customerPurchases/customer-purchases.component';
+import { WishlistComponent } from './components/wishlist/wishlist.component';
+import { EmployeePurchasesComponent } from './components/employee-purchases/employee-purchases.component';
+import { EmployeeViewRequestsComponent } from './components/employee-view-requests/employee-view-requests.component'
 
 const routes: Routes = [
   {
@@ -37,6 +40,10 @@ const routes: Routes = [
         {
           path: 'purchases',
           component: CustomerPurchasesComponent
+        },
+        {
+          path: 'wishlist',
+          component: WishlistComponent
         }
       ]
     },
@@ -51,6 +58,14 @@ const routes: Routes = [
           {
             path: 'shop',
             component: ShopComponent
+          },
+          {
+            path: 'purchases',
+            component: EmployeePurchasesComponent
+          },
+          {
+            path: 'view-requests',
+            component: EmployeeViewRequestsComponent
           }
         ]
       },

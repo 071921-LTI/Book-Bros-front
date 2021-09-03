@@ -11,7 +11,9 @@ export class RequestService {
 
   constructor(private http: HttpClient) { }
 
-  request(id: string, title: string, author: string): Observable<string> {
-    return this.http.post(environment.apiUrl + 'request', {title, author}, { responseType: 'text' })
+  request(custId: string, title: string, author: string): Observable<String> {
+    //return this.http.post(environment.apiUrl + 'request', {title, author}, { responseType: 'text' }) //headers: { 'Authorization': `${sessionStorage.getItem('token')}`
+    return this.http.post(environment.apiUrl + 'request', { custId, title, author}, { responseType: 'text' })
+  
   }
 }
