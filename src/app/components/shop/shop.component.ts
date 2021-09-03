@@ -58,6 +58,13 @@ changeBoolean(book:Book) {
     this.addToWishlistService.addToWishlist(wish).subscribe(
       response => console.log(response)
     )
+  }
+
+  searchAuthor(author:string) {
+
+  }
+
+  searchTitle(title:string) {
 
   }
 }
