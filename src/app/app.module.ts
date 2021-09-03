@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 
 import { LoginUserService } from './services/loginUser/login-user.service';
 import { ShopInfoService } from './services/shopInfo/shop-info.service';
+import { ShopInfoByService } from './services/shopInfoBy/shop-info-by.service';
 import { PurchaseInfoService } from './services/purchaseInfo/purchase-info.service';
 import { PurchaseBookService } from './services/purchaseBook/purchase-book.service';
 
@@ -17,7 +18,6 @@ import { RegisterComponent } from './components/register/register.component';
 import { EmployeeBaseComponent } from './components/componentBases/employee-base/employee-base.component';
 import { CustomerBaseComponent } from './components/componentBases/customer-base/customer-base.component';
 import { AddBookComponent } from './components/add-book/add-book.component';
-
 import { ShopComponent } from './components/shop/shop.component';
 import { CustomerRequestComponent } from './components/customer-request/customer-request.component';
 import { CustomerPurchasesComponent } from './components/customerPurchases/customer-purchases.component';
@@ -53,6 +53,7 @@ import { EmployeeViewRequestsComponent } from './components/employee-view-reques
   providers: [
     LoginUserService,
     ShopInfoService,
+    ShopInfoByService,
     PurchaseInfoService,
     PurchaseBookService
   ],
