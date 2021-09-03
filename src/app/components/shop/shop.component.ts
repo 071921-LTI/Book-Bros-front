@@ -32,21 +32,13 @@ constructor(
 books?: Book[];
 purchase?: Book
 userRole: string = `${sessionStorage.getItem('token')}`.split(':')[1];
-
-changeBoolean(book:Book) {
-  if(book.flag){
-    book.flag = false;
-  }else {
-    book.flag = true;
-  }
-}
  
 //  @Output() onGetShop:EventEmitter<any> = new EventEmitter();
 
   getShop() {
     this.getBooks.getAllBooks().subscribe(
       response => {
-        response.forEach(item=>item.flag=false)
+        response.forEach(item=> item.dataTarget = "#" + item.id)
         this.books = response;
         // this.onGetShop.emit();
         console.log(this.books);
@@ -57,7 +49,7 @@ changeBoolean(book:Book) {
   searchAuthor(authorT:string) {
     this.getBooksBy.getBooksByAuthorOrTitle('author/' + authorT).subscribe(
       response => {
-        response.forEach(item=>item.flag=false)
+        response.forEach(item => item.dataTarget = "#" + item.id)
         this.books = response;
         // this.onGetShop.emit();
         console.log(this.books);
@@ -69,7 +61,7 @@ changeBoolean(book:Book) {
   searchTitle(titleT:string) {
     this.getBooksBy.getBooksByAuthorOrTitle('title/' + titleT).subscribe(
       response => {
-        response.forEach(item=>item.flag=false)
+        response.forEach(item=>item.dataTarget = "#" + item.id)
         this.books = response;
         // this.onGetShop.emit();
         console.log(this.books);

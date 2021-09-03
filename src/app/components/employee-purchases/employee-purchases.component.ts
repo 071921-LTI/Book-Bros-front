@@ -35,7 +35,7 @@ export class EmployeePurchasesComponent implements OnInit {
   getPurchase() {
     this.getPurchases.getAllPurchasesList().subscribe(
       response => {
-        response.forEach(item=>item.book.flag=false)
+        response.forEach(item=>item.book.dataTarget = "#" + item.book.id)
         this.purchases = response;
         console.log(response)
       }
