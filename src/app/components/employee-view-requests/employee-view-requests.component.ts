@@ -21,6 +21,7 @@ export class EmployeeViewRequestsComponent implements OnInit {
     this.getRequests.getAllRequestList().subscribe(
       response => {
         this.requests = response;
+        console.log(response);
       } 
     )
   }
