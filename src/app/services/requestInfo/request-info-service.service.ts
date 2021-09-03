@@ -18,4 +18,10 @@ export class RequestInfoServiceService {
       map(response => response as BookRequest[])
     )
   }
+
+  rejectRequest(rejected: BookRequest): Observable<string> {
+    return this.http.delete<string>(environment.apiUrl  + 'request', { body:rejected }).pipe(
+      map(response => response as string)
+    )
+  }
 }

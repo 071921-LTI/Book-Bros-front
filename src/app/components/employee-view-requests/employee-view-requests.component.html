@@ -4,7 +4,22 @@
         {{request.title}}
         {{request.author}}
 
-        <button>Accept Request</button>
-        <button>Deny Request</button>
+        <button (click)='getBooks(request.author, request.title)'>Accept Request</button>
+        <button (click)='rejectRequest(request)'>Deny Request</button>
+
+        <div *ngFor='let book of books'>
+            {{book.title}}
+            {{book.author}}
+            {{book.price}}
+            {{book.price}}
+            {{book.published}}
+            {{book.inventory}}
+    
+            <button (click)='changeBoolean(book)'>More Info</button>
+            <button (click)='buyBook(book)'>Purchase</button>
+            <button *ngIf='userRole === "Customer"' (click)='addToWishlist(book)'>Add to Wishlist</button>
+            <p *ngIf='book.flag'>{{book.description}}</p>
+            <p *ngIf='book.flag'>Subjects: {{book.subjects}}</p>
+        </div>
     </div>
 </table>
