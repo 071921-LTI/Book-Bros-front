@@ -1,3 +1,9 @@
+<button (click)="getShop()" class="btn btn-primary">Show All</button> <p></p>
+<input type="text" id="author" name="author" placeholder="Author" #author> <p></p>
+<button (click)="searchAuthor(author.value)" class="btn btn-primary">Search By Author</button> <p></p>
+<input type="text" id="title" name="title" placeholder="Title" #title> <p></p>
+<button (click)="searchTitle(title.value)" class="btn btn-primary">Search By Title</button> <p></p>
+
 <table>
     <div *ngFor='let book of books'>
         {{book.title}}
