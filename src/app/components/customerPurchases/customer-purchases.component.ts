@@ -37,7 +37,7 @@ export class CustomerPurchasesComponent implements OnInit {
   getPurchase() {
     this.getPurchases.getPurchaseList(this.getTokenId()).subscribe(
       response => {
-        response.forEach(item=>item.book.flag=false)
+        response.forEach(item=>item.book.dataTarget = "#" + item.book.id)
         this.purchases = response;
         // this.onGetShop.emit();
         console.log(this.purchases);

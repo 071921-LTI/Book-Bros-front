@@ -1,15 +1,55 @@
-<table>
-    <div *ngFor='let purchase of purchases'>
-        {{purchase.book.title}}
-        {{purchase.book.author}}
-        {{purchase.book.price}}
-        {{purchase.book.price}}
-        {{purchase.book.published}}
-        {{purchase.book.inventory}}
-        {{purchase.datePurchased}}
+<table id='box'>
+    <thead>
+        <tr>    
+            <th scope="col"> Purchaser </th>
+            <th scope="col"> Title </th>
+            <th scope="col"> Author </th>
+            <th scope="col"> Price </th>
+            <th scope="col"> Published </th>
+            <th scope="col"> Date Purchased </th>
+        </tr>
+      </thead>
+    <tbody *ngFor="let purchase of purchases" id= "box" >
+        <tr>
+            <td>
+                {{purchase.purchaser.username}} 
+            </td>
+            <td>
+                {{purchase.book.title}} 
+            </td>
+            <td>
+                {{purchase.book.author}}
+            </td>
+            <td>
+                {{purchase.book.price}}
+            </td>
+            <td>
+                {{purchase.book.published}}
+            </td>
+            <td>
+                {{purchase.datePurchased | datePipeT}}
+            </td>
 
-        <button (click)='changeBoolean(purchase)'>More Info</button>
-        <p *ngIf='purchase.book.flag'>{{purchase.book.description}}</p>
-        <p *ngIf='purchase.book.flag'>Subjects: {{purchase.book.subjects}}</p>
-    </div>
+        <button type="button" data-toggle="modal" [attr.data-target]='purchase.book.dataTarget'>More Info</button>
+    </tr>
+    <div class="modal" [id]='purchase.book.id' tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Book Information</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p><b>Description: </b>{{purchase.book.description}}</p>
+              <b>Subjects: </b>{{purchase.book.subjects}}
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </tbody >
 </table>
