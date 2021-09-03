@@ -1,11 +1,22 @@
-<table>
-    <div *ngFor='let request of requests'>
-        {{request.requester.username}}
-        {{request.title}}
-        {{request.author}}
+<table id='box'>
+    <thead>
+        <tr>
+            <th scope="col"> Requested By </th>
+            <th scope="col"> Book Title </th>
+            <th scope="col"> Book Author </th>
+            <th scope="col"> Accept Request </th>
+            <th scope="col"> Deny Request </th>
 
-        <button (click)='getBooks(request.author, request.title)' data-toggle="modal" [attr.data-target]='request.dataTarget'>Accept Request</button>
-        <button (click)='rejectRequest(request)'>Deny Request</button>
+        </tr>
+    </thead>
+    <tbody *ngFor='let request of requests' id= "box">
+        <td>{{request.requester.username}}</td>
+        <td>{{request.title}}</td>
+        <td>{{request.author}}</td>
+        
+        <td><button (click)='getBooks(request.author, request.title)' data-toggle="modal" [attr.data-target]='request.dataTarget'>Accept Request</button></td>
+        <td><button (click)='rejectRequest(request)'>Deny Request</button></td>
+
 
         <div class="modal" [id]='request.id' tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
@@ -30,5 +41,5 @@
               </div>
             </div>
           </div>
-    </div>
+        </tbody>
 </table>
