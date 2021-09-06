@@ -1,10 +1,10 @@
-<table>
+<table class="table-striped">
     <div *ngFor='let request of requests'>
         {{request.requester.username}}
         {{request.title}}
         {{request.author}}
 
-        <button>Accept Request</button>
-        <button>Deny Request</button>
+        <button class="btn btn-outline-primary">Accept Request</button>
+        <button class="btn btn-outline-primary">Deny Request</button>
     </div>
 </table>

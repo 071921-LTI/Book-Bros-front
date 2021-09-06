@@ -49,7 +49,7 @@ userRole: string = `${sessionStorage.getItem('token')}`.split(':')[1];
   searchAuthor(authorT:string) {
     this.getBooksBy.getBooksByAuthorOrTitle('author/' + authorT).subscribe(
       response => {
-        response.forEach(item => item.dataTarget = "#" + item.id)
+        response.forEach(item => {item.dataTarget = "#" + item.id})
         this.books = response;
         // this.onGetShop.emit();
         console.log(this.books);
