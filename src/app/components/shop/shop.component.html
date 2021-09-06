@@ -5,9 +5,11 @@
     <button (click)="searchAuthor(author.value)" class="btn btn-primary">Search By Author</button> <p></p>
         <input type="text" id="title" name="title" placeholder="Title" #title> <p></p>
     <button (click)="searchTitle(title.value)" class="btn btn-primary">Search By Title</button> <p></p>
+        <input type="text" id="subjects" name="subjects" placeholder="Subject" #subjects> <p></p>
+    <button (click)="searchSubject(subjects.value)" class="btn btn-primary">Search By Subject</button> <p></p>
 </div>
 
-<table id='box'>
+<table id='box' class="table-striped">
     <thead>
         <tr>
             <th scope="col"> Title </th>
@@ -35,9 +37,9 @@
                 {{book.inventory}}
             </td>
 
-        <button type="button" data-toggle="modal" [attr.data-target]='book.dataTarget'>More Info</button>
-        <button *ngIf='userRole === "Customer"' (click)='buyBook(book)'>Purchase</button>
-        <button *ngIf='userRole === "Customer"' (click)='addToWishlist(book)'>Add to Wishlist</button>
+        <button type="button" data-toggle="modal" [attr.data-target]='book.dataTarget' class="btn btn-outline-primary">More Info</button>
+        <button *ngIf='userRole === "Customer"' (click)='buyBook(book)' class="btn btn-outline-primary">Purchase</button>
+        <button *ngIf='userRole === "Customer"' (click)='addToWishlist(book)' class="btn btn-outline-primary">Add to Wishlist</button>
     </tr>
 
     <div class="modal" [id]='book.id' tabindex="-1" role="dialog">
@@ -59,5 +61,6 @@
           </div>
         </div>
       </div>
-    </tbody >
+    </tbody>
 </table>
+
