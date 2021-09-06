@@ -23,4 +23,11 @@ export class SearchApiService {
       map(response => response as SearchResult)
     )
   }
+
+  searchByAuthorAndTitle(authorName: string, title: string): Observable<SearchResult> {
+    return this.http.get(`${environment.apiUrl}api?title=${title}&author=${authorName}`).pipe(
+      map(response => response as SearchResult)
+    )
+  }
+
 }
