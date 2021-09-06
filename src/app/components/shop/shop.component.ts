@@ -18,6 +18,8 @@ export class ShopComponent implements OnInit {
   title!: ElementRef;
   @ViewChild('author')
   author!: ElementRef;
+  @ViewChild('subjects')
+  subjects!: ElementRef;
 
 constructor(
   private getBooks: ShopInfoService, 
@@ -76,7 +78,7 @@ userRole: string = `${sessionStorage.getItem('token')}`.split(':')[1];
         console.log(this.books);
       }
     )
-    this.title.nativeElement.value = '';
+    this.subjects.nativeElement.value = '';
   }
 
   buyBook(purchase: Book) {
