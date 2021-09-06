@@ -51,7 +51,6 @@ userRole: string = `${sessionStorage.getItem('token')}`.split(':')[1];
       response => {
         response.forEach(item => {item.dataTarget = "#" + item.id})
         this.books = response;
-        // this.onGetShop.emit();
         console.log(this.books);
       }
     )
@@ -63,7 +62,17 @@ userRole: string = `${sessionStorage.getItem('token')}`.split(':')[1];
       response => {
         response.forEach(item=>item.dataTarget = "#" + item.id)
         this.books = response;
-        // this.onGetShop.emit();
+        console.log(this.books);
+      }
+    )
+    this.title.nativeElement.value = '';
+  }
+
+  searchSubject(subjectT:string) {
+    this.getBooksBy.getBooksByAuthorOrTitle('subject/' + subjectT).subscribe(
+      response => {
+        response.forEach(item=>item.dataTarget = "#" + item.id)
+        this.books = response;
         console.log(this.books);
       }
     )
