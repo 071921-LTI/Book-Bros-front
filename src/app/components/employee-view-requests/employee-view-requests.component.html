@@ -1,4 +1,4 @@
-<table id='box'>
+<table id='box' class="table-striped">
     <thead>
         <tr>
             <th scope="col"> Requested By </th>
@@ -14,8 +14,8 @@
         <td>{{request.title}}</td>
         <td>{{request.author}}</td>
         
-        <td><button (click)='getBooks(request.author, request.title)' data-toggle="modal" [attr.data-target]='request.dataTarget'>Accept Request</button></td>
-        <td><button (click)='rejectRequest(request)'>Deny Request</button></td>
+        <td><button class="btn btn-outline-primary" (click)='getBooks(request.author, request.title)' data-toggle="modal" [attr.data-target]='request.dataTarget'>Accept Request</button></td>
+        <td><button class="btn btn-outline-primary" (click)='rejectRequest(request)'>Deny Request</button></td>
 
 
         <div class="modal" [id]='request.id' tabindex="-1" role="dialog">

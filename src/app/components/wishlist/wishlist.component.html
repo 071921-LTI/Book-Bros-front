@@ -1,4 +1,4 @@
-<table id='box'>
+<table id='box' class="table-striped">
     <thead>
         <tr>
             <th scope="col"> Title </th>
@@ -26,7 +26,7 @@
                 {{wish.dateAdded | datePipe}}
             </td>
 
-        <button type="button" data-toggle="modal" [attr.data-target]='wish.book.dataTarget'>More Info</button>
+        <button type="button" data-toggle="modal" [attr.data-target]='wish.book.dataTarget' class="btn btn-outline-primary">More Info</button>
     </tr>
 
     <div class="modal" [id]='wish.book.id' tabindex="-1" role="dialog">

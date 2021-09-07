@@ -18,6 +18,8 @@ export class ShopComponent implements OnInit {
   title!: ElementRef;
   @ViewChild('author')
   author!: ElementRef;
+  @ViewChild('subjects')
+  subjects!: ElementRef;
 
 constructor(
   private getBooks: ShopInfoService, 
@@ -49,9 +51,8 @@ userRole: string = `${sessionStorage.getItem('token')}`.split(':')[1];
   searchAuthor(authorT:string) {
     this.getBooksBy.getBooksByAuthorOrTitle('author/' + authorT).subscribe(
       response => {
-        response.forEach(item => item.dataTarget = "#" + item.id)
+        response.forEach(item => {item.dataTarget = "#" + item.id})
         this.books = response;
-        // this.onGetShop.emit();
         console.log(this.books);
       }
     )
@@ -63,11 +64,21 @@ userRole: string = `${sessionStorage.getItem('token')}`.split(':')[1];
       response => {
         response.forEach(item=>item.dataTarget = "#" + item.id)
         this.books = response;
-        // this.onGetShop.emit();
         console.log(this.books);
       }
     )
     this.title.nativeElement.value = '';
+  }
+
+  searchSubject(subjectT:string) {
+    this.getBooksBy.getBooksByAuthorOrTitle('subject/' + subjectT).subscribe(
+      response => {
+        response.forEach(item=>item.dataTarget = "#" + item.id)
+        this.books = response;
+        console.log(this.books);
+      }
+    )
+    this.subjects.nativeElement.value = '';
   }
 
   buyBook(purchase: Book) {
