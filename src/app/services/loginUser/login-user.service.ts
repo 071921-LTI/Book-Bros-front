@@ -1,4 +1,5 @@
 import { Inject, Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ export class LoginUserService {
   loginUser(username:string, password:string, navigate:any) {
 
     let xhr = new XMLHttpRequest();
-    xhr.open("POST", "http://localhost:8080/login");
+    xhr.open("POST", environment.apiUrl + "login");
 
     xhr.onreadystatechange = function() {
       if(xhr.readyState === 4 && xhr.status === 200){
